@@ -74,6 +74,40 @@
         letter-spacing: 1px;
       }
 
+      /* Стиль для кастомных свадебных изображений */
+      .wedding-img-container {
+        width: 100%;
+        max-width: 540px;
+        margin: 35px auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        /* Элегантное мягкое растворение краев картинки в темном фоне сайта */
+        mask-image: radial-gradient(
+          circle,
+          rgba(0, 0, 0, 1) 75%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: radial-gradient(
+          circle,
+          rgba(0, 0, 0, 1) 75%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .wedding-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        transition: transform 1.2s ease;
+      }
+
+      .wedding-img-container:hover .wedding-img {
+        transform: scale(1.04);
+      }
+
       /* ---------------------------------- */
       /* РЕАЛИСТИЧНЫЙ КОНВЕРТ С ТЕМНЫМ ЛЕСОМ*/
       /* ---------------------------------- */
@@ -350,7 +384,7 @@
         top: 2550px;
         right: -80px;
         width: 330px;
-        transform: scaleX(-1);
+        transform: scaleX(-1) rotate(0deg);
         animation: sway-reverse 15s infinite ease-in-out alternate;
       }
 
@@ -754,7 +788,6 @@
     </style>
   </head>
   <body>
-    <!-- ЭКРАН С КОНВЕРТОМ -->
     <div id="envelope-overlay">
       <div class="envelope-wrapper" id="envelope-box">
         <div class="envelope">
@@ -783,9 +816,7 @@
       </div>
     </div>
 
-    <!-- ОСНОВНОЙ САЙТ -->
     <div id="main-site">
-      <!-- Блок 1: Пышные цветы -->
       <div class="line-art la-flower-left-1">
         <svg
           viewBox="0 0 500 500"
@@ -815,28 +846,6 @@
           <path
             class="custom-stroke"
             d="M195,275 Q150,290 165,320 Q195,310 205,285"
-          />
-        </svg>
-      </div>
-
-      <!-- Блок 2: Веточка -->
-      <div class="line-art la-branch-right-1">
-        <svg
-          viewBox="0 0 200 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="custom-stroke"
-            d="M110,30 Q130,100 90,180 Q60,260 115,350 Q140,420 95,490 Q75,530 80,570"
-          />
-          <path
-            class="custom-stroke"
-            d="M110,40 C90,60 70,85 85,115 C95,100 105,75 110,40 Z M85,115 Q100,75 110,40"
-          />
-          <path
-            class="custom-stroke"
-            d="M118,80 C135,65 155,50 160,80 C150,90 135,95 118,80 Z"
           />
           <path
             class="custom-stroke"
@@ -881,7 +890,6 @@
         </svg>
       </div>
 
-      <!-- Блок 3: Бабочка -->
       <div class="line-art la-butterfly-right-1">
         <svg
           viewBox="0 0 100 100"
@@ -911,7 +919,6 @@
         </svg>
       </div>
 
-      <!-- Блок 4: Пышные цветы -->
       <div class="line-art la-flower-left-2">
         <svg
           viewBox="0 0 500 500"
@@ -929,7 +936,6 @@
         </svg>
       </div>
 
-      <!-- Блок 5: Веточка -->
       <div class="line-art la-branch-left-2">
         <svg
           viewBox="0 0 200 600"
@@ -955,7 +961,6 @@
         </svg>
       </div>
 
-      <!-- ТЕКСТОВЫЙ КОНТЕНТ -->
       <header class="section-block">
         <div class="tagline reveal-item delay-1">Свадебное торжество</div>
         <h1 class="main-title reveal-item delay-2">
@@ -972,6 +977,14 @@
         ></div>
         <div class="wedding-date-text reveal-item delay-4">
           29 августа 2026 года
+        </div>
+
+        <div class="wedding-img-container reveal-item delay-4">
+          <img
+            src="IMG_9089.JPG"
+            alt="Wedding atmosphere"
+            class="wedding-img"
+          />
         </div>
       </header>
 
@@ -1008,6 +1021,15 @@
         <p class="body-text reveal-item delay-3" style="margin-bottom: 20px">
           Кільцева дорога, 19
         </p>
+
+        <div class="wedding-img-container reveal-item delay-3">
+          <img
+            src="IMG_9114.JPG"
+            alt="Wedding location details"
+            class="wedding-img"
+          />
+        </div>
+
         <div class="reveal-item delay-4">
           <a
             href="https://maps.app.goo.gl/UbxCBVaxgbP1v39p7"
@@ -1047,6 +1069,15 @@
           Для нас очень важна эстетика праздника. Мы будем искренне
           признательны, если вы поддержите нежную палитру нашего дня:
         </p>
+
+        <div class="wedding-img-container reveal-item delay-2">
+          <img
+            src="IMG_9066.JPG"
+            alt="Wedding couple dress-code inspiration"
+            class="wedding-img"
+          />
+        </div>
+
         <div class="palette-row">
           <div class="color-elem">
             <div class="color-circle" style="background: var(--dc-olive)"></div>
@@ -1111,12 +1142,23 @@
           </div>
         </div>
 
+        <div
+          class="wedding-img-container reveal-item delay-4"
+          style="margin-top: 50px"
+        >
+          <img
+            src="IMG_9144.JPG"
+            alt="Alexander and Katerina love story"
+            class="wedding-img"
+          />
+        </div>
+
         <p
           class="body-text reveal-item delay-4"
           style="
             font-size: 13px;
             font-style: italic;
-            margin-top: 55px;
+            margin-top: 35px;
             opacity: 0.7;
           "
         >
@@ -1159,7 +1201,6 @@
           const lowerName = name.toLowerCase();
 
           // Список МУЖСКИХ имен, которые заканчиваются на А/Я.
-          // Если твоего друга зовут как-то иначе (например, Лёня), просто допиши его сюда через запятую!
           const maleNames = [
             "рома",
             "роман",
